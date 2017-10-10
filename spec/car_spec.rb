@@ -41,6 +41,7 @@ describe Car do
       username: "loveChild88",
       password: "nothing")
     }
+
     it "belongs to a user" do
       user_example.cars << car_example
       expect(car_example.user_id).to eq(user_example.id)
