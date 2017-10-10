@@ -18,5 +18,14 @@ describe User do
       user_example.username = ""
       expect(user_example).to_not be_valid
     end
+
+    it "is not valid without a password_hash" do
+      user_example.password_hash = ""
+      expect(user_example).to_not be_valid
+    end
+
+    it "does not have the the same password and password hash" do
+      expect("abc123").to_not eq(user_example.password_hash)
+    end
   end
 end
