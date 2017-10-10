@@ -16,7 +16,7 @@ describe User do
   describe "validations" do
     it "is not valid without a username" do
       user_example.username = ""
-      examples(user_example).to_not be_valid
+      expect(user_example).to_not be_valid
     end
   end
 end

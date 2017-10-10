@@ -1,7 +1,7 @@
 class CreateCars < ActiveRecord::Migration
   def change
-    def change
       create_table :cars do |t|
+        t.belongs_to :users
         t.string :make, null: false
         t.string :model, null: false
         t.string :type
@@ -9,7 +9,6 @@ class CreateCars < ActiveRecord::Migration
         t.integer :horsepower
 
         t.timestamps
-      end
     end
   end
 end
