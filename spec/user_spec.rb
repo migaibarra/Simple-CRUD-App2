@@ -41,6 +41,20 @@ describe User do
       user_example.cars << car_example
       expect(user_example.cars).to eq([car_example])
     end
+
+    it "user can have multiple cars associated with it" do
+      another_car_example = Car.new({
+          make: "BMW",
+          model: "330i xdrive",
+          category: "compact-executive",
+          top_speed: 165,
+          horsepower: 310
+        })
+
+      user_example.cars << car_example
+      user_example.cars << another_car_example
+      expect(user_example.cars.length).to eq(2)
+    end
   end
 
   describe "methods" do
