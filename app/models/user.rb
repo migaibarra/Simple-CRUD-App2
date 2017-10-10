@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
   def self.login(username, password)
     user = User.find_by_username(username)
     if user.password == password
-      user
+      return user
     else
       nil
     end

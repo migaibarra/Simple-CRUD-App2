@@ -67,5 +67,11 @@ describe User do
     it "has a .password method that hashes the user password" do
       expect("abc123").to_not eq(user_example.password_hash)
     end
+
+    it "will not return a user if the login is not authenticated" do
+      user_example.save
+      authenticated = User.login("AceDragOn", "abcd1234")
+      expect(authenticated).to be nil
+    end
   end
 end
