@@ -4,8 +4,6 @@ class User < ActiveRecord::Base
   validates :username, presence: true, uniqueness: true
   validates :password_hash, presence: true
 
-  has_many :cars
-  
   # users.password_hash in the database is a :string
   include BCrypt
 

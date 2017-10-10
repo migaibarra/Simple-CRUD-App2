@@ -4,6 +4,4 @@ class Car < ActiveRecord::Base
   validates :type, presence: true
   validates :top_speed, presence: true
   validates :horsepower, presence: true
-
-  belongs_to :user
 end
