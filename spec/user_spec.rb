@@ -26,6 +26,12 @@ describe User do
       expect(user_example).to_not be_valid
     end
 
+    it "is not valid if the username is duplicated" do
+      user_example.save
+      user_duplicate = User.new(username: "AceDragOn", password: "whatever")
+      expect(user_duplicate).to_not be_valid
+    end
+
     it "is not valid without a password_hash" do
       user_example.password_hash = ""
       expect(user_example).to_not be_valid
@@ -58,7 +64,7 @@ describe User do
   end
 
   describe "methods" do
-    it "does not have the the same password and password hash" do
+    it "has a .password method that hashes the user password" do
       expect("abc123").to_not eq(user_example.password_hash)
     end
   end
