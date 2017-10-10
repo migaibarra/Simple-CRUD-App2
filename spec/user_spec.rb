@@ -15,7 +15,7 @@ describe User do
   let(:car_example) { Car.new(
       make: "Honda",
       model: "Civic",
-      type: "compact-economy",
+      category: "compact-economy",
       top_speed: 130,
       horsepower: 187
     )}
@@ -34,9 +34,13 @@ describe User do
 
   describe "associations" do
     it "user can have no cars associated with it" do
-      expect(user_example.cars).to be(nil)
+      expect(user_example.cars).to eq([])
     end
 
+    it "user can have a car associated with it" do
+      user_example.cars << car_example
+      expect(user_example.cars).to eq([car_example])
+    end
   end
 
   describe "methods" do
