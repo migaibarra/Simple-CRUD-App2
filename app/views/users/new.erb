@@ -1,7 +1,8 @@
-<h1>Please Login to see your garage:</h1>
+<h1>Register here!</h1>
 
 <div class="container">
-  <form action="/users/:id/cars" method="post">
+  <p>Please Enter your New Username and Password, you will be redirected to the login page after you register</p>
+  <form action="/users" method="post">
     <div>
       <label>Username:&nbsp</label>
       <input type="text" name="username">
@@ -11,10 +12,7 @@
       <input type="password" name="password">
     </div>
     <div>
-      <input type="submit" value="Login">
+      <input type="submit" name="Register">
     </div>
   </form>
-  <div>
-    <a href="/users/new">Register Here!</a>
-  </div>
 </div>

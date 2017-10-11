@@ -1,0 +1,16 @@
+<h1>Welcome <%= @user.username %> to your cool car Garage!</h1>
+
+<div class="container">
+  <p>Here is your garage:</p>
+  <% if @user.cars.length == 0 %>
+    <p>Your garage is currently empty</p>
+  <% else %>
+    <% @cars.each do |car| %>
+      <li><a href="/users/<%= car.user_id %>/cars/<%= car.id %>"><%= car.make %> <%= car.model %></a></li>
+    <% end %>
+  <% end %>
+</div>
+
+<div>
+  <a href="users/<%= user.id %>/cars/new">Add a new car!</a>
+</div>
