@@ -10,7 +10,7 @@ post "/login" do
   user = User.login(username, password)
   if user != nil
     session[:id] = user.id
-    redirect "users/#{user.id}/cars"
+    redirect "/users/#{user.id}/cars"
   else
     @error = "Username or password is not correct"
     erb :"login"
